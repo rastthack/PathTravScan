@@ -338,7 +338,7 @@ MIT License — see [LICENSE](LICENSE) for details.
 - [Rich](https://github.com/Textualize/rich) — Beautiful terminal formatting
 - [Requests](https://github.com/psf/requests) — HTTP library
 - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) — Payload inspiration
-- The bug bounty community 🐛
+
 
 ---
 
