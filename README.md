@@ -342,5 +342,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-<p align="center">Made with ❤️ for the bug bounty and security research community</p>
 <p align="center">⭐ Star this repo if it helped you find a bug!</p>
