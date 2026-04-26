@@ -29,7 +29,7 @@ def print_banner():
     console.print(Panel(
         f"[bold cyan]{BANNER}[/bold cyan]"
         "[yellow]  Advanced Path Traversal Scanner  |  Burp-Style Repeater[/yellow]\n"
-        "[dim]  v1.0.0  •  github.com/YourName/PathTravScan[/dim]\n"
+        "[dim]  v1.0.0  •  github.com/rastthack/PathTravScan[/dim]\n"
         "[bold red]  ⚠  FOR AUTHORIZED PENETRATION TESTING ONLY  ⚠[/bold red]",
         border_style="cyan", padding=(0, 2),
     ))
